@@ -158,4 +158,12 @@ public class MyLinkedList<T> implements Iterable<T> , ILinkedList<T> {
             tmp = tmp.Next;
         }
 	}
+	public boolean contains(T data) {
+		Node<T> tmp = Head;
+        while (tmp != null) {
+            if(tmp.Data==data) return true;
+            tmp = tmp.Next;
+        }
+		return false;
+	}
 }

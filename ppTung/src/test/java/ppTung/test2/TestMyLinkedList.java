@@ -85,4 +85,8 @@ public class TestMyLinkedList {
 		linkedListTest.addFirst(4);
 		Assert.assertEquals(linkedList.remove(1),linkedListTest.remove(1));
 	}
+	@Test
+	public void testContains() {
+		Assert.assertEquals(linkedList.contains(1),linkedListTest.contains(1));
+	}
 }
