@@ -10,7 +10,7 @@ public class TestRandomUUID {
 
 	@Test
 	public void test() {
-		System.out.println(RandomUUID.GenerateUUID(0x800L));
+		System.out.println(RandomUUID.GenerateUUID());
 		//other method
 		System.out.println(RandomUUID.generateString());
 	}
