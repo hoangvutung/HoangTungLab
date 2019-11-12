@@ -4,10 +4,10 @@ import java.util.Iterator;
 
 public class MyLinkedList<T> implements Iterable<T> , ILinkedList<T> {
 
-	@SuppressWarnings("hiding")
+	
 	public class Node<T> {
-		T Data;
-		Node<T> Next;
+		private T Data;
+		private Node<T> Next;
 		public Node(T data) {
 			Data=data;
 			Next=null;
@@ -17,7 +17,7 @@ public class MyLinkedList<T> implements Iterable<T> , ILinkedList<T> {
 		}
 	
 	}
-	Node<T> Head;
+	private Node<T> Head;
 	
 	public MyLinkedList(){
 		Head = null;
@@ -80,7 +80,7 @@ public class MyLinkedList<T> implements Iterable<T> , ILinkedList<T> {
 
 	public T get(int index) {
 		// TODO Auto-generated method stub
-		if(index< size()) {
+		if(index< size() && index >=0) {
 			Node<T> tmp = Head;
 			while(index>0) {
 				tmp=tmp.Next;
@@ -88,7 +88,9 @@ public class MyLinkedList<T> implements Iterable<T> , ILinkedList<T> {
 			}
 			return tmp.get();
 		}
-		return null;
+		else {
+			throw new IndexOutOfBoundsException("Wrong index");
+		}
 	}
 
 	public void addFirst(T data) {
@@ -115,7 +117,7 @@ public class MyLinkedList<T> implements Iterable<T> , ILinkedList<T> {
 
 	public void add(int index, T data) {
 		// TODO Auto-generated method stub
-		if(index< size()) {
+		if(index< size() && index>=0) {
 			if(index==0) addFirst(data);
 			else {
 				Node<T> current= Head;
@@ -130,11 +132,12 @@ public class MyLinkedList<T> implements Iterable<T> , ILinkedList<T> {
 			}
 			
 		}
+		else throw new IndexOutOfBoundsException("Wrong index");
 	}
 
 	public T remove(int index) {
 		// TODO Auto-generated method stub
-		if(index< size()) {
+		if(index< size() && index>=0) {
 			Node<T> current= Head;
 			Node<T> pre = null;
 			while(index-->0) {
@@ -145,7 +148,7 @@ public class MyLinkedList<T> implements Iterable<T> , ILinkedList<T> {
 			pre.Next=current.Next;
 			return current.Data;
 		}
-		else return null;
+		else throw new IndexOutOfBoundsException("Wrong index");
 	}
 	public void printLinkedList() {
 		System.out.println("size = "+ size());
