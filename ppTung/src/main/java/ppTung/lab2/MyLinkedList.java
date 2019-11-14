@@ -15,24 +15,19 @@ public class MyLinkedList<T> implements Iterable<T> , ILinkedList<T> {
 		public T get() {
 			return Data;
 		}
-	
 	}
 	private Node<T> Head;
 	
 	public MyLinkedList(){
 		Head = null;
-		
 	}
 	public Iterator<T> iterator() {
-		// TODO Auto-generated method stub
 		return new Iterator<T>() {
 			Node<T> tmp=Head;
 			public boolean hasNext() {
-				// TODO Auto-generated method stub
 				return (tmp != null);
 			}
 			public T next() {
-				// TODO Auto-generated method stub
 				T result = tmp.get();
 				tmp=tmp.Next;
 				return result;
@@ -41,7 +36,6 @@ public class MyLinkedList<T> implements Iterable<T> , ILinkedList<T> {
 	}
 
 	public int size() {
-		// TODO Auto-generated method stub
 		int count=0;
 		for (Node<T> i=Head; i != null; i = i.Next) {
 			count++;
@@ -50,7 +44,6 @@ public class MyLinkedList<T> implements Iterable<T> , ILinkedList<T> {
 	}
 
 	public T removeFirst() {
-		// TODO Auto-generated method stub
 		if(Head==null) return null;
 		else {
 			T result = Head.Data;
@@ -60,7 +53,6 @@ public class MyLinkedList<T> implements Iterable<T> , ILinkedList<T> {
 	}
 
 	public T removeLast() {
-		// TODO Auto-generated method stub
 		if(Head==null) return null;
 		else {
 			Node<T> current= Head;
@@ -75,11 +67,9 @@ public class MyLinkedList<T> implements Iterable<T> , ILinkedList<T> {
 				return current.Data;
 			}
 		}
-		
 	}
 
 	public T get(int index) {
-		// TODO Auto-generated method stub
 		if(index< size() && index >=0) {
 			Node<T> tmp = Head;
 			while(index>0) {
@@ -94,14 +84,12 @@ public class MyLinkedList<T> implements Iterable<T> , ILinkedList<T> {
 	}
 
 	public void addFirst(T data) {
-		// TODO Auto-generated method stub
 		Node<T> newNode= new Node<T>(data);
 		newNode.Next=Head;
 		Head=newNode;
 	}
 
 	public void addLast(T data) {
-		// TODO Auto-generated method stub
 		Node<T> newNode= new Node<T>(data);
 		if(Head==null) {
 			Head= newNode;
@@ -116,10 +104,8 @@ public class MyLinkedList<T> implements Iterable<T> , ILinkedList<T> {
 	}
 
 	public void add(int index, T data) {
-		// TODO Auto-generated method stub
-		if(index< size() && index>=0) {
-			if(index==0) addFirst(data);
-			else {
+		if(index==0) addFirst(data);
+		else if(index< size() && index>0) {
 				Node<T> current= Head;
 				Node<T> pre = Head;
 				while(index-->0) {
@@ -129,15 +115,13 @@ public class MyLinkedList<T> implements Iterable<T> , ILinkedList<T> {
 				Node<T> newNode = new Node<T>(data);
 				newNode.Next=current;
 				pre.Next= newNode;
-			}
-			
 		}
 		else throw new IndexOutOfBoundsException("Wrong index");
 	}
 
 	public T remove(int index) {
-		// TODO Auto-generated method stub
 		if(index< size() && index>=0) {
+			if(index==0) return removeFirst();
 			Node<T> current= Head;
 			Node<T> pre = null;
 			while(index-->0) {
