@@ -1,6 +1,4 @@
-package ppTung.test2;
-
-import static org.junit.Assert.*;
+package ppTung.lab2;
 
 import java.util.LinkedList;
 
@@ -10,7 +8,7 @@ import org.junit.Test;
 
 import ppTung.lab2.MyLinkedList;
 
-public class TestMyLinkedList {
+public class MyLinkedListTest {
 	MyLinkedList<Integer> linkedList;
 	LinkedList<Integer> linkedListTest;
 	@Before

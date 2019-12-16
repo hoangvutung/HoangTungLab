@@ -1,13 +1,7 @@
-package ppTung.test1;
-
-import static org.junit.Assert.*;
-
+package ppTung.lab01;
 import org.junit.Test;
 
-import ppTung.lab01.RandomUUID;
-
-public class TestRandomUUID {
-
+public class RandomUUIDTest {
 	@Test
 	public void test() {
 		System.out.println(RandomUUID.GenerateUUID());
