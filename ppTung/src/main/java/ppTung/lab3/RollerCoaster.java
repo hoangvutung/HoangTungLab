@@ -38,7 +38,7 @@ public class RollerCoaster {
 			String name = Thread.currentThread().getName();
 			System.out.println(new Date() +": " + name  + "  is on the car " );
 			personOnCar++;
-			while(personOnCar <10) {
+			while(personOnCar <M) {
 				  wait();
 			}
 			Trips.add(personOnCar);

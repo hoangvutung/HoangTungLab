@@ -13,7 +13,7 @@ public class RollerCoasterTest {
 	public void test() throws InterruptedException {
 		RollerCoaster.Controler RC = new RollerCoaster.Controler();
 		ArrayList<RollerCoaster.Client> threads = new ArrayList<RollerCoaster.Client>() ;
-		for(int i=0;i<30;i++) {
+		for(int i=0;i<20;i++) {
 			RollerCoaster.Client client = new RollerCoaster.Client(RC);
 			client.setName("Client "+Integer.toString(i+1));
 			client.start();
