@@ -5,8 +5,7 @@ import java.util.UUID;
 
 public class RandomUUID {
 
-	public static void main(String[] args) {
-	}
+	
 	public static String GenerateUUID() {
 		 SecureRandom rng = new SecureRandom();
 	     String value= Long.toHexString(rng.nextLong())+ Long.toHexString(rng.nextLong());
@@ -20,7 +19,7 @@ public class RandomUUID {
 	}
 	public static String generateString() {
 	        String uuid = UUID.randomUUID().toString();
-	        return "uuid = " + uuid;
+	        return uuid;
 	}
 
 }
